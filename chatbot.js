@@ -1,4 +1,5 @@
 (function() {
+    const frontend_url = 'https://ee-chatbot-frontend.vercel.app';
     const backend_url = 'https://backend-wgh5.vercel.app';
     const backend_token = '7yr82hwerwehfbwy94rkjbwef975b32497897243hbsbjkdshbqhwoiuqerbhf';
 
@@ -21,7 +22,7 @@
             function addCssLink() {
                 const link = document.createElement('link');
                 link.rel = 'stylesheet';
-                link.href = backend_url + '/static/chatbot.css';
+                link.href = frontend_url + '/chatbot.css';
                 document.head.appendChild(link);
             }
 
