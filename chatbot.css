@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* Add any other styles for your page here */
+}
+
+/* Style the widget container */
+.widget-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Style the widget button */
+.widget-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 1px; /* Remove default padding */
+    border: none;
+    cursor: pointer;
+    /* shape-outside: 10px; */
+    background-image: url('chatbot_widget.gif');
+    background-size: 100% 100%; /* You can use other values like "100% 100%" or "50% 50%" */
+    background-position: center; /* Center the image within the button */
+    background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+.widget {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Position the chatbot container at the top of the button */
+    position: absolute;
+    top: -652px; /* Adjust this value to position the widget as desired */
+    right: 0;
+    /*height: 500px; !* Increase the height by 20% (300px + 20%) *!*/
+    width: 440px; /* Increase the width by 20% (250px + 20%) */
+    overflow: hidden;
+    /* Add a CSS transition to create a smooth upward movement effect */
+    transition: top 0.3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: #c4d4da #f2f2f2;
+}
+
+/* Style the chat messages container scroll bar track */
+#chatMessagesContainer::-webkit-scrollbar {
+    width: 4px; /* Width of the scroll bar */
+}
+
+/* Style the chat messages container scroll bar thumb */
+#chatMessagesContainer::-webkit-scrollbar-thumb {
+    background-color: #c4d4da; /* Color of the scroll bar thumb */
+    border-radius: 10px; /* Radius of the scroll bar thumb */
+}
+
+/* Style chat messages container */
+#chatMessagesContainer {
+    height: 470px; /* Increase the height by 20% (240px + 20%) */
+    overflow-y: auto; /* Enable vertical scrolling for overflow */
+    margin-bottom: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+#chatMessages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style user messages */
+#chatMessages .user-message {
+    background-color: #ccc;
+    padding: 5px 10px;
+    border-radius: 7px;
+    display: inline-block;
+    max-width: 65%;
+    word-wrap: break-word;
+    align-self: flex-end;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-family: Garamond, serif;
+}
+
+/* Style bot messages */
+#chatMessages .chatbot-message {
+    background-color: #004c97;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 7px;
+    display: inline-block;
+    max-width: 65%;
+    word-wrap: break-word;
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-family: Garamond, serif;
+}
+
+/* Style the chat input */
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    background-color: #004c97;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the chatbot header */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.chat-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: url('chatbot_dp.png') no-repeat center center;
+    background-size: 50px 50px;
+}
+
+.chatbot-name {
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: grey;
+}
+
+#sendButton img {
+    width: 20px;
+    height: 20px;
+    url('send.png');
+}
+
+#sendButton {
+    width: 40px;
+    height: 40px;
+    background: #004c97 url('send.png') no-repeat center center;
+    background-size: 20px 20px;
+}
+
+.typing-dot {
+    animation: typing 1s infinite;
+}
+
+@keyframes typing {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
